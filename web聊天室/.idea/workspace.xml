@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59cd9acf-9672-4256-966e-a8e50f0b3ad7" name="Default Changelist" comment="" />
+    <list default="true" id="59cd9acf-9672-4256-966e-a8e50f0b3ad7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/util/Util.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +16,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="21m29eifr6QBI5RsEMMxbmb5vW7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -22,6 +28,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -70,6 +77,7 @@
       <workItem from="1638592337692" duration="1166000" />
       <workItem from="1638593553367" duration="6447000" />
       <workItem from="1638627574829" duration="599000" />
+      <workItem from="1638628240028" duration="122000" />
     </task>
     <servers />
   </component>
@@ -89,22 +97,22 @@
       <screen x="0" y="0" width="1676" height="913" />
     </state>
     <state x="888" y="428" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1676.913@0.0.1676.913" timestamp="1638624708086" />
-    <state width="1089" height="157" key="GridCell.Tab.0.bottom" timestamp="1638627520498">
+    <state width="1091" height="154" key="GridCell.Tab.0.bottom" timestamp="1638628362514">
       <screen x="0" y="0" width="1676" height="913" />
     </state>
-    <state width="1089" height="157" key="GridCell.Tab.0.bottom/0.0.1676.913@0.0.1676.913" timestamp="1638627520498" />
-    <state width="1089" height="157" key="GridCell.Tab.0.center" timestamp="1638627520498">
+    <state width="1091" height="154" key="GridCell.Tab.0.bottom/0.0.1676.913@0.0.1676.913" timestamp="1638628362514" />
+    <state width="1091" height="154" key="GridCell.Tab.0.center" timestamp="1638628362514">
       <screen x="0" y="0" width="1676" height="913" />
     </state>
-    <state width="1089" height="157" key="GridCell.Tab.0.center/0.0.1676.913@0.0.1676.913" timestamp="1638627520498" />
-    <state width="1089" height="157" key="GridCell.Tab.0.left" timestamp="1638627520498">
+    <state width="1091" height="154" key="GridCell.Tab.0.center/0.0.1676.913@0.0.1676.913" timestamp="1638628362514" />
+    <state width="1091" height="154" key="GridCell.Tab.0.left" timestamp="1638628362513">
       <screen x="0" y="0" width="1676" height="913" />
     </state>
-    <state width="1089" height="157" key="GridCell.Tab.0.left/0.0.1676.913@0.0.1676.913" timestamp="1638627520498" />
-    <state width="1089" height="157" key="GridCell.Tab.0.right" timestamp="1638627520498">
+    <state width="1091" height="154" key="GridCell.Tab.0.left/0.0.1676.913@0.0.1676.913" timestamp="1638628362513" />
+    <state width="1091" height="154" key="GridCell.Tab.0.right" timestamp="1638628362514">
       <screen x="0" y="0" width="1676" height="913" />
     </state>
-    <state width="1089" height="157" key="GridCell.Tab.0.right/0.0.1676.913@0.0.1676.913" timestamp="1638627520498" />
+    <state width="1091" height="154" key="GridCell.Tab.0.right/0.0.1676.913@0.0.1676.913" timestamp="1638628362514" />
     <state x="610" y="9" key="SettingsEditor" timestamp="1638625793100">
       <screen x="0" y="0" width="1676" height="913" />
     </state>
