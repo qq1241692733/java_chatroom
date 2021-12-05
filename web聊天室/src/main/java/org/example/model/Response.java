@@ -1,5 +1,6 @@
 package org.example.model;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,4 +22,6 @@ public class Response {
     private boolean ok;
     // 操作时报，前端展示错误信息
     private String reason;
+    // 保存业务数据
+    private Object data;
 }
