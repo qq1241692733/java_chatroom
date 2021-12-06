@@ -227,9 +227,10 @@
         curChannelId: null
       },
       methods: {
+        // 登录
         loginAccount() {
           console.log("login");
-          $.ajax({
+          jQuery.getJSON.ajax({
             url: 'login',
             type: 'post',
             contentType: 'application/json',
@@ -267,6 +268,8 @@
             }
           });
         },
+
+        // 消息展示
         showMessage(channelId) {
           // 针对 message 中的数据进行筛选
           this.curChannelMessages = this.messages.filter((message, i) => {
@@ -317,7 +320,7 @@
         initWebSocket() {
           // 登陆成功后, 初始化 WebSocket 对象
           if('WebSocket' in window){
-            this.websocket = new WebSocket("ws://localhost:8080/java_chatroom/message/" + this.user.userId);
+            this.websocket = new WebSocket("ws://localhost:8085/java_chatroom/message/" + this.user.userId);
             console.log("link success")
           }else{
               alert('Not support websocket')

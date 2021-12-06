@@ -1,6 +1,5 @@
 package org.example.servlet;
 
-import javafx.application.Application;
 import org.example.dao.UserDAO;
 import org.example.exception.AppException;
 import org.example.model.User;
