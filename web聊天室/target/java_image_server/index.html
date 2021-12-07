@@ -230,7 +230,7 @@
         // 登录
         loginAccount() {
           console.log("login");
-          jQuery.getJSON.ajax({
+          $.ajax({
             url: 'login',
             type: 'post',
             contentType: 'application/json',
@@ -256,6 +256,7 @@
             }
           })
         },
+        // 注销
         logout() {
           console.log("logout");
           app.login.isLogin = false;
@@ -264,7 +265,11 @@
             url: 'logout',
             type: 'get',
             success: function(data, status) {
-              window.location.reload();
+              if (data.ok)
+                // 注销成功，刷新页面
+                window.location.reload();
+              else
+                alert(data.reason);
             }
           });
         },

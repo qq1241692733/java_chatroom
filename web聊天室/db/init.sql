@@ -40,3 +40,8 @@ create table message (messageId int primary key auto_increment,
 insert into message values (null, 1, 1, 'hehe1', now());
 insert into message values (null, 1, 1, 'hehe2', now());
 insert into message values (null, 1, 1, 'hehe3', now());
+
+desc message;
+select *from message m where sendTime > (select lastLogout from user where userId = 1);
+select *from message order by userId,sendTime;
+select m.*,u.nickName from message m join user u on u.userId=m.userId where m.sendTime > (select lastLogout from user where userId = 1);

@@ -7,6 +7,7 @@ import org.example.util.Util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -59,6 +60,27 @@ public class UserDAO {
         } finally {
             // 5.释放资源
             Util.close(connection, ps, res);
+        }
+    }
+
+    /**
+     * 更新用户退出时间
+     * @param userId
+     */
+    public static int updateLastLogout(Integer userId) {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            c = Util.getConnection();
+            String sql = "update user set lastLogout=? where userId=?";
+            ps = c.prepareStatement(sql);
+            ps.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+            ps.setInt(2, userId);
+            return ps.executeUpdate();
+        }catch (Exception e) {
+            throw new AppException("更新用户退出时间出错", e);
+        }finally {
+            Util.close(c, ps);
         }
     }
 }
