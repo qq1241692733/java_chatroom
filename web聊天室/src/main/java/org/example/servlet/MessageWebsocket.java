@@ -5,12 +5,10 @@ import org.example.dao.UserDAO;
 import org.example.model.Message;
 import org.example.model.MessageCenter;
 import org.example.util.Util;
-
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 @ServerEndpoint("/message/{userId}")
