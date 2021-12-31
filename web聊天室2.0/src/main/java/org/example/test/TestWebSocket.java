@@ -5,6 +5,15 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 
+/**
+ * Created with IntelliJ IDEA.
+ * Description:
+ * 文档注释 一般用于 方法的注释和类的注释
+ * User: hong yaO
+ * Date: 2021-12-2021/12/26
+ * Time: 16:55
+ */
+
 @ServerEndpoint(value="/test/{userId}")
 public class TestWebSocket {
     private String userId = null;
@@ -12,7 +21,7 @@ public class TestWebSocket {
     @OnOpen
     public void onOpen(@PathParam("userId") String userId, Session session) {
         this.userId = userId;
-        System.out.println("打开连接: " + userId);
+        System.out.println("打开链接" + userId);
     }
 
     @OnClose
