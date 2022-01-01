@@ -69,7 +69,6 @@ public class LoginServlet extends HttpServlet {
             User query = UserDAO.queryByName(input.getName());
             if (query == null) {
                 throw new AppException("用户不存在");
-
             }
             if (!query.getPassword().equals(input.getPassword())) {
                 throw new AppException("账号或密码错误");
