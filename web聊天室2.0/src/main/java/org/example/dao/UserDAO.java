@@ -44,7 +44,7 @@ public class UserDAO {
                 user.setUserId(res.getInt("userId"));
                 user.setName(name);
                 user.setPassword(res.getString("password"));
-                user.setNickname(res.getString("nickName"));
+                user.setNickName(res.getString("nickName"));
                 user.setIconPath(res.getString("iconPath"));
                 user.setSignature(res.getString("signature"));
 

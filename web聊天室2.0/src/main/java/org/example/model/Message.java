@@ -25,4 +25,6 @@ public class Message {
     private String content;
     private java.util.Date sendTime;
 
+    private String nickName;
+
 }

@@ -24,7 +24,7 @@ public class User extends Response implements Serializable {
     private Integer userId;
     private String name;
     private String password;
-    private String nickname;
+    private String nickName;
     private String iconPath;
     private String signature;
     private java.util.Date lastLogout;
