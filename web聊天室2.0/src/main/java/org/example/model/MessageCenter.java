@@ -1,7 +1,5 @@
 package org.example.model;
 
-import lombok.SneakyThrows;
-
 import javax.websocket.Session;
 import java.io.IOException;
 import java.util.concurrent.BlockingDeque;
@@ -21,28 +19,39 @@ public class MessageCenter {
     private static final ConcurrentHashMap<Integer, Session> clients = new ConcurrentHashMap<>();
 
     /**
-     * 阻塞队列:用来存放消息，接收到客户端消息就放到里边（放进去很快）
-     *      再启动一个线程，不停的拉取队列中的消息，发送(发送和接受并发执行，异步消息处理)
-     *      在大量消息接收时，可以降低服务器压力，达到削峰的目的
+     * 优化：
+     *    1.阻塞队列:用来存放消息，接收到客户端消息就放到里边（放进去很快）
+     *    2.再启动一个线程，不停的拉取队列中的消息，发送(发送和接受并发执行，异步消息处理)
+     *          在大量消息接收时，可以降低服务器压力，达到削峰的目的
+     *    3.懒汉模式
      */
     private static BlockingDeque<String> messageBlockingDeque = new LinkedBlockingDeque<>();
 
-    private static MessageCenter center = null;
-
     private MessageCenter() {}
+
+    private static volatile MessageCenter center = null;
 
     public static MessageCenter getInstance() {
         if (center == null) {
-            center = new MessageCenter();
-            new Thread(new Runnable() { // 启动一个线程，不停的拉取队列中的消息
-                @SneakyThrows
-                @Override
-                public void run() {
-                    // 阻塞式获取数据，如果队列为空，阻塞等待
-                    String message = messageBlockingDeque.take();
-                    sendMessage(message);
+            synchronized (MessageCenter.class) {
+                if (center == null) {
+                    center = new MessageCenter();
+                    new Thread(new Runnable() { // 启动一个线程，不停的拉取队列中的消息
+                        @Override
+                        public void run() {
+                            while (true) {
+                                // 阻塞式获取数据，如果队列为空，阻塞等待
+                                try {
+                                    String message = messageBlockingDeque.take();
+                                    sendMessage(message);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    }).start();
                 }
-            }).start();
+            }
         }
         return center;
     }
@@ -79,6 +88,7 @@ public class MessageCenter {
         try {
             for (Session session : clients.values()) {
                 session.getBasicRemote().sendText(message);
+                System.out.println("发送消息："+ message);
             }
         } catch (IOException e) {
             e.printStackTrace();

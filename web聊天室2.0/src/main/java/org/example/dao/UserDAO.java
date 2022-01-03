@@ -4,10 +4,7 @@ import org.example.exception.AppException;
 import org.example.model.User;
 import org.example.util.DBUtils;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 
 /**
@@ -61,6 +58,45 @@ public class UserDAO {
         } finally {
             // 5. 释放资源
             DBUtils.close(c, ps, res);
+        }
+    }
+
+    public static int updateLastLogout(Integer userId) {
+        Connection c = null;
+        PreparedStatement ps = null;
+
+        try {
+            c = DBUtils.getConnection();
+            String sql = "update user set lastLogout=? where userId=?";
+            ps = c.prepareStatement(sql);
+            ps.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+            ps.setInt(2, userId);
+            return ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new AppException("更新用户最后退出时间出错", e);
+        } finally {
+            DBUtils.close(c,ps);
+        }
+
+    }
+
+    public static int addUser(String name, String password, String nickName, String signature) {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            c = DBUtils.getConnection();
+            String sql = "insert into user values (null,?,?,?,null,?,?)";
+            ps = c.prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setString(2,password);
+            ps.setString(3,nickName);
+            ps.setString(4,signature);
+            ps.setTimestamp(5,new Timestamp(System.currentTimeMillis()));
+            return ps.executeUpdate();
+        }catch (Exception e){
+            throw new AppException("注册失败",e);
+        }finally {
+            DBUtils.close(c,ps);
         }
     }
 }

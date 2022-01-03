@@ -16,16 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59cd9acf-9672-4256-966e-a8e50f0b3ad7" name="Default Changelist" comment="websocket转发消息，基本功能实现，性能待优化">
-      <change afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/dao/ChannelDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/model/MessageCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/servlet/ChannelServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/servlet/MessageWebsocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/servlet/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/model/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/java/org/example/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web聊天室2.0/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web聊天室2.0/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web聊天室2.0/target/java_image_server/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web聊天室2.0/target/java_image_server/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +215,7 @@
       <workItem from="1641014720696" duration="9247000" />
       <workItem from="1641025328160" duration="6841000" />
       <workItem from="1641106643298" duration="10230000" />
+      <workItem from="1641182184744" duration="2095000" />
     </task>
     <task id="LOCAL-00001" summary="websocket转发消息，基本功能实现，性能待优化">
       <created>1638789488800</created>
@@ -390,11 +383,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/servlet/LoginServlet.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/dao/MessageDAO.java</url>
           <line>64</line>
