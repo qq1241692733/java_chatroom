@@ -14,7 +14,7 @@ userId: 1 <br />
 <script type="text/javascript">
     //判断当前浏览器是否支持WebSocket
     if('WebSocket' in window){
-        websocket = new WebSocket("ws://localhost:8085/java_chatroom/test/1");
+        websocket = new WebSocket("ws://http:110.42.217.78:8080/java_chatroom/test/1");
         console.log("link success")
     }else{
         alert('Not support websocket')

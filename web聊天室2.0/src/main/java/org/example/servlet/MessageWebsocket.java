@@ -59,14 +59,15 @@ public class MessageWebsocket {
         MessageCenter.delOnlineUser(userId);
         // 2.建立连接时要获取上次用户登录以后的消息，所以关闭长连接就是代表用户退出
         // 更新用户上次退出时间
-        //UserDAO.updateLastLogout(userId);
+        UserDAO.updateLastLogout(userId);
     }
 
     @OnError
     public void onError(@PathParam("userId") Integer userId,  Throwable error) {
         System.out.println("连接出现错误! " + userId);
+        // 和关闭连接一样
         MessageCenter.delOnlineUser(userId);
         error.printStackTrace();
-        // 和关闭连接一样
+        UserDAO.updateLastLogout(userId);
     }
 }
