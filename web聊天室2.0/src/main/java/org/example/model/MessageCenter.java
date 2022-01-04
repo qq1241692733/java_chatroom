@@ -14,6 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  * Date: 2022-01-2022/1/2
  * Time: 15:21
  */
+
 public class MessageCenter {
     // ConcurrentHashMap 线程安全，读读并发，写写互斥
     private static final ConcurrentHashMap<Integer, Session> clients = new ConcurrentHashMap<>();
@@ -61,7 +62,6 @@ public class MessageCenter {
         messageBlockingDeque.add(message);
     }
 
-
     /**
      * websocket 建立连接，添加用户 id 和客户端 session，保存起来
      */
@@ -94,4 +94,5 @@ public class MessageCenter {
             e.printStackTrace();
         }
     }
+
 }

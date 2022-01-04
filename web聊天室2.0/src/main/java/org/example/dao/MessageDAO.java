@@ -26,7 +26,9 @@ public class MessageDAO {
         PreparedStatement ps = null;
 
         try {
+            // 1.获取数据库连接
             c = DBUtils.getConnection();
+            // 2.sql
             String sql = "insert into message values (null,?,?,?,?)";
             ps = c.prepareStatement(sql);
             ps.setInt(1, message.getUserId());
